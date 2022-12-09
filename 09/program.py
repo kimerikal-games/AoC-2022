@@ -20,24 +20,16 @@ def main() -> int:
 
 
 def part1(moves: list[tuple[str, int]]) -> int:
-    head = (0, 0)
-    tail = (0, 0)
-    visited: set[Point] = set()
-    visited.add(tail)
-
-    for direction, amount in moves:
-        for _ in range(amount):
-            head = move(head, direction)
-            tail = follow(head, tail)
-            visited.add(tail)
-
-    return len(visited)
+    return solve(moves, 2)
 
 
 def part2(moves: list[tuple[str, int]]) -> int:
-    points: list[Point] = [(0, 0)] * 10
-    visited: set[Point] = set()
-    visited.add((0, 0))
+    return solve(moves, 10)
+
+
+def solve(moves: list[tuple[str, int]], length: int) -> int:
+    points: list[Point] = [(0, 0)] * length
+    visited: set[Point] = set([points[-1]])
 
     for direction, amount in moves:
         for _ in range(amount):
