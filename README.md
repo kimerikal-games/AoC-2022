@@ -37,7 +37,7 @@ My solutions for [Advent of Code 2022](https://adventofcode.com/2022).
             <td align="center"><a href="https://codeberg.org/kimerikal/AoC-2022/src/branch/main/07/program.py">7</a></td>
             <td align="center"><a href="https://codeberg.org/kimerikal/AoC-2022/src/branch/main/08/program.py">8</a></td>
             <td align="center"><a href="https://codeberg.org/kimerikal/AoC-2022/src/branch/main/09/program.py">9</a></td>
-            <td align="center"><!--<a href="https://codeberg.org/kimerikal/AoC-2022/src/branch/main/10/program.py">10</a>-->10</td>
+            <td align="center"><a href="https://codeberg.org/kimerikal/AoC-2022/src/branch/main/10/program.py">10</a></td>
         </tr>
         <tr>
             <td align="center"><!--<a href="https://codeberg.org/kimerikal/AoC-2022/src/branch/main/11/program.py">11</a>-->11</td>
