@@ -53,13 +53,9 @@ def solve(commands: list[str]) -> dict[str, int]:
                             pass
                         case [size_raw, _]:
                             total_size += int(size_raw)
-                        case _:
-                            pass
                 for d in wd:
                     dirsizes[d] += total_size
                 command_no = j
-            case _:
-                pass
 
         command_no += 1
     return dirsizes
