@@ -4,75 +4,42 @@ Author: kimerikal <kimerikal.games@gmail.com>
 """
 import sys
 
-Instruction = list[str]
+rows, cols = 6, 40
 
 
 def main() -> int:
     insts = [line.split() for line in sys.stdin]
 
-    print("Part 1:", part1(insts))
-    print("Part 2:")
-    part2(insts)
+    history = preprocess(insts)
+    print("Part 1:", part1(history))
+    print("Part 2:", part2(history), sep="\n")
 
     return 0
 
 
-def part1(insts: list[Instruction]) -> int:
-    cycle = 0
+def preprocess(insts: list[list[str]]) -> list[int]:
     register = 1
     history = [1]
 
     for inst in insts:
         match inst:
-            case ["addx", x]:
-                value = int(x)
-                cycle += 1
-                history.append(cycle * register)
-                cycle += 1
-                history.append(cycle * register)
-                register += value
+            case ["addx", imm]:
+                history.append(register)
+                history.append(register)
+                register += int(imm)
             case ["noop"]:
-                cycle += 1
-                history.append(cycle * register)
-            case _:
-                raise ValueError(f"Invalid instruction {inst}")
+                history.append(register)
 
-    return sum(history[20::40])
+    return history
 
 
-def part2(insts: list[Instruction]) -> None:
-    rows = 6
-    cols = 40
-    crt = [False] * (rows * cols)
-
-    cycle = 0
-    register = 1
-    plot(cols, crt, cycle, register)
-
-    for inst in insts:
-        match inst:
-            case ["addx", x]:
-                value = int(x)
-                cycle += 1
-                plot(cols, crt, cycle, register)
-                cycle += 1
-                plot(cols, crt, cycle, register)
-                register += value
-            case ["noop"]:
-                cycle += 1
-                plot(cols, crt, cycle, register)
-            case _:
-                raise ValueError(f"Invalid instruction {inst}")
-
-    for row in range(rows):
-        for col in range(cols):
-            print(".#"[crt[row * cols + col]], end="")
-        print()
+def part1(history: list[int]) -> int:
+    return sum([cycle * register for cycle, register in enumerate(history)][20::40])
 
 
-def plot(cols: int, crt: list[bool], cycle: int, register: int):
-    if register - 1 <= (cycle - 1) % cols <= register + 1:
-        crt[cycle - 1] = True
+def part2(history: list[int]) -> str:
+    lits = [abs((cycle - 1) % cols - register) <= 1 for cycle, register in enumerate(history)]
+    return "\n".join("".join("#" if cell else "." for cell in lits[cols * i + 1 : cols * (i + 1) + 1]) for i in range(rows))
 
 
 if __name__ == "__main__":
