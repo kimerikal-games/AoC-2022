@@ -10,7 +10,7 @@ def initialize_directory(day: int, title: str, config: dict) -> None:
     print(f"Initializing directory for day {day:02d}: {title}")
 
     try:
-        shutil.copytree("00", f"{day:02d}")
+        shutil.copytree("day/00", f"day/{day:02d}")
     except FileExistsError:
         print("Directory already exists. Overwrite? [y/N]")
         response = input()
@@ -18,7 +18,7 @@ def initialize_directory(day: int, title: str, config: dict) -> None:
             print("Aborting.")
             return
 
-    with open(f"{day:02d}/program.py", "r") as f:
+    with open(f"day/{day:02d}/program.py", "r") as f:
         program = f.read()
     program = (
         program
@@ -28,7 +28,7 @@ def initialize_directory(day: int, title: str, config: dict) -> None:
         .replace("{{ name }}", config["name"])
         .replace("{{ email }}", config["email"])
     )
-    with open(f"{day:02d}/program.py", "w") as f:
+    with open(f"day/{day:02d}/program.py", "w") as f:
         f.write(program)
 
     print("Done.")
