@@ -11,49 +11,43 @@ from typing import Optional
 
 
 class Monkey:
-    __slots__ = ("items", "_operation_s", "boring", "_test_value", "_truthy", "_falsy", "_cnt_inspect")
+    __slots__ = ("items", "operation_s", "boring", "test_value", "truthy", "falsy", "cnt_inspect")
 
     def __init__(self, items: list[int], operation_s: str, test_value: int, truthy: int, falsy: int):
         self.items = deque(items)
-        self._operation_s = operation_s
+        self.operation_s = operation_s
         self.boring: bool
-        self._test_value = test_value
-        self._truthy = truthy
-        self._falsy = falsy
-        self._cnt_inspect = 0
+        self.test_value = test_value
+        self.truthy = truthy
+        self.falsy = falsy
+        self.cnt_inspect = 0
 
     def inspect(self):
         while self.items:
-            yield from self._inspect_item(self.items.popleft())
-
-    def _inspect_item(self, item: int):
-        self._cnt_inspect += 1
-        item = eval(self._operation_s.replace("old", str(item)))
-        if self.boring:
-            item //= item
-        to = self._truthy if item % self._test_value == 0 else self._falsy
-        yield to, item
+            self.cnt_inspect += 1
+            item = self.items.popleft()
+            item = eval(self.operation_s.replace("old", str(item)))
+            if self.boring:
+                item //= item
+            to = self.truthy if item % self.test_value == 0 else self.falsy
+            yield to, item
 
     def add_item(self, item: int) -> None:
         self.items.append(item)
 
-    def count_inspect(self) -> int:
-        return self._cnt_inspect
-
 
 def main() -> int:
-    mod, monkeys = preprocess()
+    monkeys = preprocess()
 
     print("Part 1:", part1(monkeys))
-    print("Part 2:", part2(monkeys, mod))
+    print("Part 2:", part2(monkeys))
 
     return 0
 
 
-def preprocess() -> tuple[int, list[Monkey]]:
+def preprocess() -> list[Monkey]:
     input = sys.stdin.readline
 
-    mod = 1
     monkeys: list[Monkey] = []
     while True:
         lines = [input() for _ in range(7)]
@@ -61,10 +55,9 @@ def preprocess() -> tuple[int, list[Monkey]]:
             break
         starting_items, operation_s, test_value, truthy, falsy = parsed
         monkey = Monkey(starting_items, operation_s, test_value, truthy, falsy)
-        mod = lcm(mod, test_value)
         monkeys.append(monkey)
 
-    return mod, monkeys
+    return monkeys
 
 
 def parse_lines(lines: list[str]) -> Optional[tuple[list[int], str, int, int, int]]:
@@ -84,12 +77,13 @@ def part1(monkeys: list[Monkey]) -> int:
     return solve(monkeys, True, 20)
 
 
-def part2(monkeys: list[Monkey], mod: int) -> int:
-    return solve(monkeys, False, 10000, mod)
+def part2(monkeys: list[Monkey]) -> int:
+    return solve(monkeys, False, 10000)
 
 
-def solve(monkeys: list[Monkey], boring: bool, rounds: int, mod: Optional[int] = None) -> int:
+def solve(monkeys: list[Monkey], boring: bool, rounds: int) -> int:
     monkeys = deepcopy(monkeys)
+    mod = lcm(*(monkey.test_value for monkey in monkeys))
 
     for monkey in monkeys:
         monkey.boring = boring
@@ -97,11 +91,10 @@ def solve(monkeys: list[Monkey], boring: bool, rounds: int, mod: Optional[int] =
     for _ in range(rounds):
         for monkey in monkeys:
             for to, item in monkey.inspect():
-                if mod is not None:
-                    item %= mod
+                item %= mod
                 monkeys[to].add_item(item)
 
-    counter = [monkey.count_inspect() for monkey in monkeys]
+    counter = [monkey.cnt_inspect for monkey in monkeys]
     c1, c2 = sorted(counter)[-2:]
     monkey_business = c1 * c2
 
