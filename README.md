@@ -40,7 +40,7 @@ My solutions for [Advent of Code 2022](https://adventofcode.com/2022).
             <td align="center"><a href="https://codeberg.org/kimerikal/AoC-2022/src/branch/main/day/10/program.py">10</a></td>
         </tr>
         <tr>
-            <td align="center"><!--<a href="https://codeberg.org/kimerikal/AoC-2022/src/branch/main/day/11/program.py">11</a>-->11</td>
+            <td align="center"><a href="https://codeberg.org/kimerikal/AoC-2022/src/branch/main/day/11/program.py">11</a></td>
             <td align="center"><!--<a href="https://codeberg.org/kimerikal/AoC-2022/src/branch/main/day/12/program.py">12</a>-->12</td>
             <td align="center"><!--<a href="https://codeberg.org/kimerikal/AoC-2022/src/branch/main/day/13/program.py">13</a>-->13</td>
             <td align="center"><!--<a href="https://codeberg.org/kimerikal/AoC-2022/src/branch/main/day/14/program.py">14</a>-->14</td>
