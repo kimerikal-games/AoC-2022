@@ -7,8 +7,7 @@ import sys
 from collections import deque
 from copy import deepcopy
 from math import lcm
-
-lcm_test_value = 1
+from typing import Optional
 
 
 class Monkey:
@@ -25,16 +24,15 @@ class Monkey:
 
     def inspect(self):
         while self.items:
-            item = self.items.popleft()
-            yield from self._inspect_item(item)
+            yield from self._inspect_item(self.items.popleft())
 
     def _inspect_item(self, item: int):
+        self._cnt_inspect += 1
         item = eval(self._operation_s.replace("old", str(item)))
-        item = item // 3 if self.boring else item
-        item = item
+        if self.boring:
+            item //= item
         to = self._truthy if item % self._test_value == 0 else self._falsy
         yield to, item
-        self._cnt_inspect += 1
 
     def add_item(self, item: int) -> None:
         self.items.append(item)
@@ -44,10 +42,18 @@ class Monkey:
 
 
 def main() -> int:
+    mod, monkeys = preprocess()
+
+    print("Part 1:", part1(monkeys))
+    print("Part 2:", part2(monkeys, mod))
+
+    return 0
+
+
+def preprocess() -> tuple[int, list[Monkey]]:
     input = sys.stdin.readline
 
-    global lcm_test_value
-
+    mod = 1
     monkeys: list[Monkey] = []
     while True:
         lines = [input() for _ in range(7)]
@@ -55,16 +61,13 @@ def main() -> int:
             break
         starting_items, operation_s, test_value, truthy, falsy = parsed
         monkey = Monkey(starting_items, operation_s, test_value, truthy, falsy)
-        lcm_test_value = lcm(lcm_test_value, test_value)
+        mod = lcm(mod, test_value)
         monkeys.append(monkey)
 
-    print("Part 1:", part1(monkeys))
-    print("Part 2:", part2(monkeys))
-
-    return 0
+    return mod, monkeys
 
 
-def parse_lines(lines: list[str]):
+def parse_lines(lines: list[str]) -> Optional[tuple[list[int], str, int, int, int]]:
     if not lines[0]:
         return None
 
@@ -81,11 +84,11 @@ def part1(monkeys: list[Monkey]) -> int:
     return solve(monkeys, True, 20)
 
 
-def part2(monkeys: list[Monkey]) -> int:
-    return solve(monkeys, False, 10000)
+def part2(monkeys: list[Monkey], mod: int) -> int:
+    return solve(monkeys, False, 10000, mod)
 
 
-def solve(monkeys: list[Monkey], boring: bool, rounds: int):
+def solve(monkeys: list[Monkey], boring: bool, rounds: int, mod: Optional[int] = None) -> int:
     monkeys = deepcopy(monkeys)
 
     for monkey in monkeys:
@@ -94,13 +97,15 @@ def solve(monkeys: list[Monkey], boring: bool, rounds: int):
     for _ in range(rounds):
         for monkey in monkeys:
             for to, item in monkey.inspect():
-                monkeys[to].add_item(item % lcm_test_value)
+                if mod is not None:
+                    item %= mod
+                monkeys[to].add_item(item)
 
     counter = [monkey.count_inspect() for monkey in monkeys]
     c1, c2 = sorted(counter)[-2:]
-    monkey_buisness = c1 * c2
+    monkey_business = c1 * c2
 
-    return monkey_buisness
+    return monkey_business
 
 
 if __name__ == "__main__":
