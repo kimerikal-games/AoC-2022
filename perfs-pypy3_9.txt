@@ -1,0 +1,90 @@
+=== day/00 ===
+0.01user 0.01system 0:00.04elapsed 52%CPU (0avgtext+0avgdata 55868maxresident)k
+0inputs+8outputs (0major+5949minor)pagefaults 0swaps
+
+=== day/01 ===
+0.02user 0.01system 0:00.04elapsed 97%CPU (0avgtext+0avgdata 67864maxresident)k
+0inputs+8outputs (0major+7681minor)pagefaults 0swaps
+
+=== day/02 ===
+0.03user 0.02system 0:00.05elapsed 98%CPU (0avgtext+0avgdata 69364maxresident)k
+0inputs+8outputs (0major+8027minor)pagefaults 0swaps
+
+=== day/03 ===
+0.03user 0.00system 0:00.03elapsed 100%CPU (0avgtext+0avgdata 67484maxresident)k
+0inputs+8outputs (0major+7647minor)pagefaults 0swaps
+
+=== day/04 ===
+0.02user 0.02system 0:00.04elapsed 97%CPU (0avgtext+0avgdata 68324maxresident)k
+0inputs+8outputs (0major+7725minor)pagefaults 0swaps
+
+=== day/05 ===
+0.03user 0.00system 0:00.04elapsed 97%CPU (0avgtext+0avgdata 68012maxresident)k
+0inputs+8outputs (0major+7653minor)pagefaults 0swaps
+
+=== day/06 ===
+0.02user 0.01system 0:00.04elapsed 100%CPU (0avgtext+0avgdata 67896maxresident)k
+0inputs+8outputs (0major+7677minor)pagefaults 0swaps
+
+=== day/07 ===
+  File "day/07/program.py", line 38
+    match command.split():
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+Command exited with non-zero status 1
+0.01user 0.01system 0:00.03elapsed 100%CPU (0avgtext+0avgdata 66092maxresident)k
+0inputs+0outputs (0major+7309minor)pagefaults 0swaps
+
+=== day/08 ===
+0.04user 0.00system 0:00.07elapsed 73%CPU (0avgtext+0avgdata 66400maxresident)k
+0inputs+8outputs (0major+7396minor)pagefaults 0swaps
+
+=== day/09 ===
+0.06user 0.01system 0:00.08elapsed 100%CPU (0avgtext+0avgdata 68152maxresident)k
+0inputs+8outputs (0major+7835minor)pagefaults 0swaps
+
+=== day/10 ===
+  File "day/10/program.py", line 25
+    match inst:
+    ^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+Command exited with non-zero status 1
+0.01user 0.01system 0:00.03elapsed 96%CPU (0avgtext+0avgdata 66140maxresident)k
+0inputs+0outputs (0major+7310minor)pagefaults 0swaps
+
+=== day/11 ===
+12.45user 0.06system 0:12.54elapsed 99%CPU (0avgtext+0avgdata 132876maxresident)k
+0inputs+8outputs (0major+31041minor)pagefaults 0swaps
+
+=== day/12 ===
+0.04user 0.01system 0:00.08elapsed 71%CPU (0avgtext+0avgdata 66596maxresident)k
+0inputs+8outputs (0major+7501minor)pagefaults 0swaps
+
+=== day/13 ===
+Traceback (most recent call last):
+  File "day/13/program.py", line 61, in <module>
+    def compare(left: int | list, right: int | list) -> Literal[-1, 0, 1]:
+TypeError: unsupported operand type(s) for |: 'type' and 'type'
+Command exited with non-zero status 1
+0.04user 0.00system 0:00.06elapsed 73%CPU (0avgtext+0avgdata 67840maxresident)k
+0inputs+0outputs (0major+7697minor)pagefaults 0swaps
+
+=== day/14 ===
+0.09user 0.00system 0:00.12elapsed 84%CPU (0avgtext+0avgdata 71608maxresident)k
+0inputs+8outputs (0major+8516minor)pagefaults 0swaps
+
+=== day/15 ===
+1.90user 0.01system 0:01.93elapsed 99%CPU (0avgtext+0avgdata 68740maxresident)k
+0inputs+8outputs (0major+7864minor)pagefaults 0swaps
+
+=== day/16 ===
+1.43user 0.05system 0:01.50elapsed 98%CPU (0avgtext+0avgdata 139764maxresident)k
+0inputs+8outputs (0major+32700minor)pagefaults 0swaps
+
+=== day/17 ===
+0.11user 0.01system 0:00.14elapsed 88%CPU (0avgtext+0avgdata 74656maxresident)k
+0inputs+8outputs (0major+9312minor)pagefaults 0swaps
+
+=== day/18 ===
+0.05user 0.01system 0:00.07elapsed 100%CPU (0avgtext+0avgdata 73040maxresident)k
+0inputs+8outputs (0major+8835minor)pagefaults 0swaps

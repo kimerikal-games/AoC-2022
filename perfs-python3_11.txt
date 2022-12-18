@@ -1,0 +1,75 @@
+=== day/00 ===
+0.01user 0.00system 0:00.01elapsed 100%CPU (0avgtext+0avgdata 9244maxresident)k
+0inputs+8outputs (0major+1045minor)pagefaults 0swaps
+
+=== day/01 ===
+0.02user 0.00system 0:00.02elapsed 100%CPU (0avgtext+0avgdata 10848maxresident)k
+0inputs+8outputs (0major+1429minor)pagefaults 0swaps
+
+=== day/02 ===
+0.02user 0.00system 0:00.02elapsed 100%CPU (0avgtext+0avgdata 10836maxresident)k
+0inputs+8outputs (0major+1454minor)pagefaults 0swaps
+
+=== day/03 ===
+0.01user 0.00system 0:00.01elapsed 100%CPU (0avgtext+0avgdata 10656maxresident)k
+0inputs+8outputs (0major+1407minor)pagefaults 0swaps
+
+=== day/04 ===
+0.01user 0.00system 0:00.01elapsed 94%CPU (0avgtext+0avgdata 10908maxresident)k
+0inputs+8outputs (0major+1414minor)pagefaults 0swaps
+
+=== day/05 ===
+0.01user 0.00system 0:00.01elapsed 93%CPU (0avgtext+0avgdata 10788maxresident)k
+0inputs+8outputs (0major+1270minor)pagefaults 0swaps
+
+=== day/06 ===
+0.01user 0.00system 0:00.01elapsed 94%CPU (0avgtext+0avgdata 10752maxresident)k
+0inputs+8outputs (0major+1392minor)pagefaults 0swaps
+
+=== day/07 ===
+0.01user 0.00system 0:00.01elapsed 100%CPU (0avgtext+0avgdata 10068maxresident)k
+0inputs+8outputs (0major+1133minor)pagefaults 0swaps
+
+=== day/08 ===
+0.02user 0.00system 0:00.02elapsed 100%CPU (0avgtext+0avgdata 9712maxresident)k
+0inputs+8outputs (0major+1058minor)pagefaults 0swaps
+
+=== day/09 ===
+0.04user 0.00system 0:00.04elapsed 95%CPU (0avgtext+0avgdata 10504maxresident)k
+0inputs+8outputs (0major+1432minor)pagefaults 0swaps
+
+=== day/10 ===
+0.00user 0.00system 0:00.00elapsed 100%CPU (0avgtext+0avgdata 9760maxresident)k
+0inputs+8outputs (0major+1054minor)pagefaults 0swaps
+
+=== day/11 ===
+2.79user 0.00system 0:02.80elapsed 99%CPU (0avgtext+0avgdata 11568maxresident)k
+0inputs+8outputs (0major+1493minor)pagefaults 0swaps
+
+=== day/12 ===
+0.01user 0.00system 0:00.01elapsed 100%CPU (0avgtext+0avgdata 9844maxresident)k
+0inputs+8outputs (0major+1136minor)pagefaults 0swaps
+
+=== day/13 ===
+0.02user 0.00system 0:00.02elapsed 96%CPU (0avgtext+0avgdata 11396maxresident)k
+0inputs+8outputs (0major+1536minor)pagefaults 0swaps
+
+=== day/14 ===
+0.53user 0.00system 0:00.53elapsed 99%CPU (0avgtext+0avgdata 12640maxresident)k
+0inputs+8outputs (0major+1786minor)pagefaults 0swaps
+
+=== day/15 ===
+13.28user 0.00system 0:13.29elapsed 99%CPU (0avgtext+0avgdata 10824maxresident)k
+0inputs+8outputs (0major+1423minor)pagefaults 0swaps
+
+=== day/16 ===
+2.12user 0.02system 0:02.15elapsed 99%CPU (0avgtext+0avgdata 52568maxresident)k
+0inputs+8outputs (0major+14325minor)pagefaults 0swaps
+
+=== day/17 ===
+0.07user 0.00system 0:00.07elapsed 100%CPU (0avgtext+0avgdata 12044maxresident)k
+0inputs+8outputs (0major+1742minor)pagefaults 0swaps
+
+=== day/18 ===
+0.03user 0.00system 0:00.03elapsed 100%CPU (0avgtext+0avgdata 14172maxresident)k
+0inputs+8outputs (0major+2312minor)pagefaults 0swaps
