@@ -44,7 +44,6 @@ def part2(cubes: List[Cube]) -> int:
             if not (-1 <= x <= 21 and -1 <= y <= 21 and -1 <= z <= 21):
                 continue
             if neighbor in cube_set:
-                print(neighbor)
                 exposed += 1
             else:
                 jobs.append(neighbor)
