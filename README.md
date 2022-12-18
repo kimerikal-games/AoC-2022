@@ -49,7 +49,7 @@ My solutions for [Advent of Code 2022](https://adventofcode.com/2022).
             <td align="center"><a href="https://codeberg.org/kimerikal/AoC-2022/src/branch/main/day/17/program.py">17</a></td>
         </tr>
         <tr>
-            <td align="center"><!--<a href="https://codeberg.org/kimerikal/AoC-2022/src/branch/main/day/18/program.py">18</a>-->18</td>
+            <td align="center"><a href="https://codeberg.org/kimerikal/AoC-2022/src/branch/main/day/18/program.py">18</a></td>
             <td align="center"><!--<a href="https://codeberg.org/kimerikal/AoC-2022/src/branch/main/day/19/program.py">19</a>-->19</td>
             <td align="center"><!--<a href="https://codeberg.org/kimerikal/AoC-2022/src/branch/main/day/20/program.py">20</a>-->20</td>
             <td align="center"><!--<a href="https://codeberg.org/kimerikal/AoC-2022/src/branch/main/day/21/program.py">21</a>-->21</td>
